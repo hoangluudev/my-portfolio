@@ -1,7 +1,7 @@
-import { Box, Link as MuiLink, Stack } from "@mui/material";
-import Link from "next/link";
 import React from "react";
+import { Stack } from "@mui/material";
 import { FaTelegram, FaGithub, FaLinkedin } from "react-icons/fa";
+import MuiLink from "./MuiLink";
 
 const socialIcons = [
   {
@@ -32,7 +32,6 @@ const Social: React.FC = () => {
       {socialIcons.map((item, index) => {
         return (
           <MuiLink
-            component={Link}
             key={index}
             href={item.path}
             sx={{

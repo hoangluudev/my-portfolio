@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { Link } from "@/lib/next";
-import { Stack, Link as LinkMUI } from "@mui/material";
+import { Stack } from "@mui/material";
 import { usePathname } from "next/navigation";
+import MuiLink from "./MuiLink";
 
 type NavLink = {
   name: string;
@@ -23,8 +23,7 @@ const Nav: React.FC = () => {
   return (
     <Stack flexDirection={"row"} alignItems={"center"} columnGap={3}>
       {navLinks.map((link) => (
-        <LinkMUI
-          component={Link}
+        <MuiLink
           href={link.path}
           key={link.path}
           sx={{
@@ -44,7 +43,7 @@ const Nav: React.FC = () => {
           }}
         >
           {link.name}
-        </LinkMUI>
+        </MuiLink>
       ))}
     </Stack>
   );

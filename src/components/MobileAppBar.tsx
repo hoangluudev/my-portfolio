@@ -8,15 +8,14 @@ import {
   IconButton,
   List,
   ListItem,
-  Link as LinkMUI,
   Stack,
   Toolbar,
   Typography,
 } from "@mui/material";
 import { Close, Segment } from "@mui/icons-material";
 import Logo from "./Logo";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import MuiLink from "./MuiLink";
 
 type NavLink = {
   name: string;
@@ -61,9 +60,8 @@ const MobileAppBar: React.FC = () => {
             key={index}
             sx={{ flexDirection: "row", justifyContent: "center" }}
           >
-            <LinkMUI
+            <MuiLink
               key={index}
-              component={Link}
               href={link.path}
               sx={{
                 width: "max-content",
@@ -80,7 +78,7 @@ const MobileAppBar: React.FC = () => {
               }}
             >
               {link.name}
-            </LinkMUI>
+            </MuiLink>
           </ListItem>
         ))}
       </List>

@@ -1,11 +1,10 @@
 import React from "react";
-import { Typography, Link as MuiLink } from "@mui/material";
-import { Link } from "@/lib/next";
+import { Typography } from "@mui/material";
+import MuiLink from "./MuiLink";
 
 const Logo = () => {
   return (
     <MuiLink
-      component={Link}
       href={"/"}
       sx={{
         color: "#fff",
