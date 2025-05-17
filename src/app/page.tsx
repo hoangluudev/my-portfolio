@@ -1,95 +1,91 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import Photo from "@/components/Photo";
+import Social from "@/components/Social";
+import Stats from "@/components/Stats";
+import { FileDownloadOutlined } from "@mui/icons-material";
+import { Container, Box, Typography, Stack, Button } from "@mui/material";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Container sx={{ overflowY: "hidden" }}>
+      <Stack flexDirection="column" rowGap={5}>
+        <Stack
+          flexDirection={{ xs: "column-reverse", md: "row" }}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          rowGap={4}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <Box component={"div"} sx={{ flex: { xs: 0, md: 1 } }}>
+            <Stack
+              flexDirection={"column"}
+              sx={{ textAlign: { xs: "center", md: "left" } }}
+            >
+              <Typography sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}>
+                Fullstack Developer
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: "2rem",
+                    sm: "3rem",
+                    md: "4rem",
+                  },
+                  lineHeight: 1,
+                  fontWeight: 600,
+                }}
+              >
+                Hello I'm
+              </Typography>
+              <Typography
+                sx={{
+                  color: "#02FC99",
+                  fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
+                  lineHeight: 1,
+                  fontWeight: 600,
+                }}
+              >
+                Luu Nguyen
+              </Typography>
+              <Typography sx={{ color: "#cccccc", fontSize: "0.9rem", my: 2 }}>
+                I excel at crafting elegant digital experiences and I am
+                proficent in varous programming languages and technologies.
+              </Typography>
+            </Stack>
+            <Stack
+              flexDirection={{ xs: "column", md: "row" }}
+              justifyContent={{ xs: "center", md: "left" }}
+              alignItems="center"
+              sx={{ columnGap: 2 }}
+            >
+              <Button
+                variant="outlined"
+                sx={{
+                  fontSize: "0.8rem",
+                  color: "#02FC99",
+                  borderColor: "#02FC99",
+                  borderRadius: "1.5rem",
+                  transition: "all 0.25s ease-in-out",
+                  fontWeight: 600,
+                  "&:hover": {
+                    background: "#02FC99",
+                    color: "#000",
+                  },
+                  py: 1,
+                  px: 2,
+                }}
+                endIcon={<FileDownloadOutlined />}
+              >
+                Download CV
+              </Button>
+              <Social />
+            </Stack>
+          </Box>
+          <Box sx={{ flex: { xs: 0, md: 1 } }}>
+            <Photo />
+          </Box>
+        </Stack>
+        <Stats />
+      </Stack>
+    </Container>
   );
 }
