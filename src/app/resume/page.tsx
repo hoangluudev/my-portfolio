@@ -4,7 +4,7 @@ import About from "@/components/ResumeTabs/About";
 import Education from "@/components/ResumeTabs/Education";
 import Experience from "@/components/ResumeTabs/Experience";
 import Skills from "@/components/ResumeTabs/Skills";
-import { Box, Container, Stack, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Container, Stack, Tab, Tabs } from "@mui/material";
 import React, { ReactNode } from "react";
 import {
   FaCss3,

@@ -11,9 +11,9 @@ interface EducationItemsProps {
 }
 interface EducationProps {
   data: {
-    icon: String;
-    title: String;
-    description: String;
+    icon: string;
+    title: string;
+    description: string;
     items: EducationItemsProps[];
   };
 }

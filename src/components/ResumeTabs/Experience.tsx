@@ -11,9 +11,9 @@ interface ExperienceItemsProps {
 }
 interface ExperienceProps {
   data: {
-    icon: String;
-    title: String;
-    description: String;
+    icon: string;
+    title: string;
+    description: string;
     items: ExperienceItemsProps[];
   };
 }

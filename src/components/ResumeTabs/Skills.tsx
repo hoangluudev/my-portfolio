@@ -11,8 +11,8 @@ interface SkillsItemsProps {
 }
 interface SkillsProps {
   data: {
-    title: String;
-    description: String;
+    title: string;
+    description: string;
     items: SkillsItemsProps[];
   };
 }

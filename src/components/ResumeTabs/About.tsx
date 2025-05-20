@@ -10,8 +10,8 @@ interface AboutItemsProps {
 }
 interface AboutProps {
   data: {
-    title: String;
-    description: String;
+    title: string;
+    description: string;
     items: AboutItemsProps[];
   };
 }
