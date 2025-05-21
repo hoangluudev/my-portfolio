@@ -1,4 +1,5 @@
 "use client";
+
 import ComponentFadeIn from "@/components/ComponentEffect/ComponentFadeIn";
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";

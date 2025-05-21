@@ -1,21 +1,12 @@
 "use client";
+
+import React, { ReactNode } from "react";
+import { Box, Container, Stack, Tab, Tabs } from "@mui/material";
 import ComponentFadeIn from "@/components/ComponentEffect/ComponentFadeIn";
 import About from "@/components/ResumeTabs/About";
 import Education from "@/components/ResumeTabs/Education";
 import Experience from "@/components/ResumeTabs/Experience";
 import Skills from "@/components/ResumeTabs/Skills";
-import { Box, Container, Stack, Tab, Tabs } from "@mui/material";
-import React, { ReactNode } from "react";
-import {
-  FaCss3,
-  FaFigma,
-  FaHtml5,
-  FaJs,
-  FaNode,
-  FaReact,
-} from "react-icons/fa";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiMongodb, SiMysql, SiTypescript, SiVite } from "react-icons/si";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -51,156 +42,17 @@ const a11yProps = (index: number) => {
   };
 };
 
-const experienceInfo = {
-  icon: "/assets/resume/badge.svg",
-  title: "My experience",
-  description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis,
-        exercitationem! Animi asperiores ratione aperiam rem, excepturi quod
-        perspiciatis delectus eligendi! Quo iste porro inventore corporis
-        veritatis officia impedit omnis eveniet!`,
-  items: [
-    {
-      name: "MaskCodex",
-      position: "Front-End Developer Intern",
-      duration: "2020 - Present",
-    },
-    {
-      name: "MaskCodex",
-      position: "Front-End Developer Intern",
-      duration: "2022 - Present",
-    },
-  ],
-};
-const educationInfo = {
-  icon: "/assets/resume/cap.svg",
-  title: "My education",
-  description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis,
-        exercitationem! Animi asperiores ratione aperiam rem, excepturi quod
-        perspiciatis delectus eligendi! Quo iste porro inventore corporis
-        veritatis officia impedit omnis eveniet!`,
-  items: [
-    {
-      name: "Information Technology College HCM",
-      degree: "Associate Degree in Information Technology",
-      duration: "09/2020 - 09/2023",
-    },
-    {
-      name: "Onschool Bootcamp",
-      degree: "Full Stack Javascript Web Development",
-      duration: "11/2023 - Present",
-    },
-  ],
-};
-const skillInfo = {
-  title: "My skills",
-  description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis,
-        exercitationem! Animi asperiores ratione aperiam rem, excepturi quod
-        perspiciatis delectus eligendi! Quo iste porro inventore corporis
-        veritatis officia impedit omnis eveniet!`,
-  items: [
-    {
-      icon: FaHtml5,
-      name: "HTML5",
-    },
-    {
-      icon: FaCss3,
-      name: "CSS3",
-    },
-    {
-      icon: FaJs,
-      name: "Javascript",
-    },
-    {
-      icon: SiTypescript,
-      name: "Typescript",
-    },
-    {
-      icon: FaReact,
-      name: "React JS",
-    },
-    {
-      icon: SiVite,
-      name: "Vite",
-    },
-    {
-      icon: RiNextjsFill,
-      name: "Next.JS",
-    },
-    {
-      icon: RiTailwindCssFill,
-      name: "TailwindCss",
-    },
-    {
-      icon: FaNode,
-      name: "Node.JS",
-    },
-    {
-      icon: FaFigma,
-      name: "Figma",
-    },
-    {
-      icon: SiMongodb,
-      name: "MongoDB",
-    },
-    {
-      icon: SiMysql,
-      name: "MySQL",
-    },
-  ],
-};
-const aboutInfo = {
-  title: "About me",
-  description: ` Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis,
-        exercitationem! Animi asperiores ratione aperiam rem, excepturi quod
-        perspiciatis delectus eligendi! Quo iste porro inventore corporis
-        veritatis officia impedit omnis eveniet!`,
-  items: [
-    {
-      fieldName: "Name",
-      fieldValue: "Luu Nguyen",
-    },
-    {
-      fieldName: "Phone",
-      fieldValue: "03123456",
-    },
-    {
-      fieldName: "Experience",
-      fieldValue: "1+ Years",
-    },
-    {
-      fieldName: "Telegram",
-      fieldValue: "@hoangluu2607",
-    },
-    {
-      fieldName: "Nationality",
-      fieldValue: "Vietnamese",
-    },
-    {
-      fieldName: "Email",
-      fieldValue: "hoangluu.devx@gmail.com",
-    },
-    {
-      fieldName: "Freelance",
-      fieldValue: "Available",
-    },
-    {
-      fieldName: "Languages",
-      fieldValue: "English (Basic), Vietnamese (Native)",
-    },
-  ],
-};
-
 const tabList: TabListProps[] = [
   {
-    title: experienceInfo.title,
-    component: <Experience data={experienceInfo} />,
+    title: "My experience",
+    component: <Experience />,
   },
   {
-    title: educationInfo.title,
-    component: <Education data={educationInfo} />,
+    title: "My education",
+    component: <Education />,
   },
-  { title: skillInfo.title, component: <Skills data={skillInfo} /> },
-  { title: aboutInfo.title, component: <About data={aboutInfo} /> },
+  { title: "My skills", component: <Skills /> },
+  { title: "About me", component: <About /> },
 ];
 
 const ResumePage: React.FC = () => {

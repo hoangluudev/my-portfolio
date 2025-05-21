@@ -6,30 +6,35 @@ import { BsArrowDownRight } from "react-icons/bs";
 import ComponentFadeIn from "@/components/ComponentEffect/ComponentFadeIn";
 import MuiLink from "@/components/MuiLink";
 
-const serviceList = [
+interface serviceListProps {
+  num: string;
+  title: string;
+  description: string;
+}
+const serviceList: serviceListProps[] = [
   {
     num: "01",
     title: "Fullstack Developer",
-    description: `Lorem, ipsum dolor sit amet consectetur adipisicing
-      elit. Doloribus, repudiandae facere!`,
+    description: `I will design and develop end-to-end web applications with
+     a strong focus on performance and scalability.
+      Proficient in both front-end and back-end technologies such as MERN stack. Experienced in building APIs,
+        managing databases, and deploying full-stack solutions.`,
   },
   {
     num: "02",
     title: "Front-End Developer",
-    description: `Lorem, ipsum dolor sit amet consectetur adipisicing
-      elit. Doloribus, repudiandae facere!`,
+    description: `Create responsive and user-centric interfaces using modern
+   frameworks like React and Next.js, with styling handled through Tailwind CSS
+    or Material UI. Focus on performance, accessibility, and delivering seamless
+   user experiences. Skilled in implementing design systems and optimizing UI across various devices.`,
   },
   {
     num: "03",
     title: "Back-End Developer",
-    description: `Lorem, ipsum dolor sit amet consectetur adipisicing
-      elit. Doloribus, repudiandae facere!`,
-  },
-  {
-    num: "04",
-    title: "UI/UX Designer",
-    description: `Lorem, ipsum dolor sit amet consectetur adipisicing
-      elit. Doloribus, repudiandae facere!`,
+    description: `Build robust and secure server-side applications using Node.js,
+     Express, and database systems like MySQL or MongoDB.
+      Specialize in API design, system architecture, and data modeling.
+       Emphasize code maintainability, security, and scalability.`,
   },
 ];
 

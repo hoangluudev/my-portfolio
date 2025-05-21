@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { Link as CustomMuiLink, SxProps, Theme } from "@mui/material";
-import { Link } from "@/lib/next";
+import Link from "next/link";
 
 interface MuiLinkProps {
   children: ReactNode;
@@ -10,7 +10,12 @@ interface MuiLinkProps {
 
 const MuiLink: React.FC<MuiLinkProps> = ({ children, href, sx }) => {
   return (
-    <CustomMuiLink className="CustomMuiLink" component={Link} href={href} sx={sx}>
+    <CustomMuiLink
+      className="CustomMuiLink"
+      component={Link}
+      href={href}
+      sx={sx}
+    >
       {children}
     </CustomMuiLink>
   );

@@ -4,34 +4,44 @@ import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import ScrollArea from "../ui/ScrollArea";
 
-interface EducationItemsProps {
-  name: string;
-  degree: string;
-  duration: string;
-}
 interface EducationProps {
-  data: {
-    icon: string;
-    title: string;
-    description: string;
-    items: EducationItemsProps[];
-  };
+  title: string;
+  description: string;
+  items: { name: string; degree: string; duration: string }[];
 }
 
-const Education: React.FC<EducationProps> = ({ data }) => {
+const educationInfo: EducationProps = {
+  title: "My education",
+  description: `I've built a strong foundation in IT through formal education and enhanced my
+   web development skills with a focus on the MERN stack through full-stack training programs.`,
+  items: [
+    {
+      name: "Information Technology College HCM",
+      degree: "Associate Degree in Information Technology",
+      duration: "09/2020 - 09/2023",
+    },
+    {
+      name: "Onschool Bootcamp",
+      degree: "Full Stack Javascript Web Development",
+      duration: "11/2023 - Present",
+    },
+  ],
+};
+
+const Education: React.FC = () => {
   return (
     <Box width={"100%"}>
       <Typography
         sx={{ textAlign: "center", fontSize: "2rem", fontWeight: 700 }}
       >
-        {data.title}
+        {educationInfo.title}
       </Typography>
       <Typography sx={{ textAlign: "center", my: 4 }}>
-        {data.description}
+        {educationInfo.description}
       </Typography>
       <ScrollArea height={"380px"} thumbColor="#02FC99">
         <Grid container spacing={3} sx={{ width: "100%" }}>
-          {data.items.map((item, index) => {
+          {educationInfo.items.map((item, index) => {
             return (
               <Grid
                 key={index}

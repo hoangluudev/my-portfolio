@@ -17,59 +17,50 @@ import { BsArrowUpRight } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 
-const projects = [
+interface projectProps {
+  num: string;
+  category: string;
+  image: string;
+  title: string;
+  description: string;
+  liveUrl: string;
+  githubUrl: string;
+  stack: {
+    name: string;
+  }[];
+}
+
+const projects: projectProps[] = [
   {
     num: "01",
-    category: "Fullstack project",
+    category: "Frontend project",
     image: "/assets/work/thumb1.png",
-    title: "Project 1",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-          placeat dolorum, cumque minus nisi totam eius accusantium, tempore
-          magni voluptate quia animi! Placeat perferendis ut itaque blanditiis
-          natus ex ea.`,
+    title: "Portfolio",
+    description: `A personal portfolio website (this website) to my showcase projects, skills, and experience.
+     Built with responsive modern UI design principles and smooth animations`,
     liveUrl: "",
     githubUrl: "",
     stack: [
       { name: "NextJS" },
       { name: "Material UI" },
-      { name: "NodeJS" },
-      { name: "MySQL" },
+      { name: "Framer Motion" },
     ],
   },
   {
     num: "02",
-    category: "Frontend project",
+    category: "Fullstack project",
     image: "/assets/work/thumb2.png",
-    title: "Project 2",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-          placeat dolorum, cumque minus nisi totam eius accusantium, tempore
-          magni voluptate quia animi! Placeat perferendis ut itaque blanditiis
-          natus ex ea.`,
+    title: "Rozal Store",
+    description: `An e-commerce web application (still in progress) featuring user authentication (JWT),
+     OTP-based verification, image uploads (Cloudinary + Sharp), secure payments, and product management with MongoDB.
+      Includes role-based access, password encryption (bcrypt), and scheduled tasks (node-schedule).`,
     liveUrl: "",
     githubUrl: "",
     stack: [
-      { name: "NextJS" },
+      { name: "ReactJS" },
       { name: "Material UI" },
-      { name: "NodeJS" },
-      { name: "MySQL" },
-    ],
-  },
-  {
-    num: "03",
-    category: "Frontend project",
-    image: "/assets/work/thumb3.png",
-    title: "Project 3",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-          placeat dolorum, cumque minus nisi totam eius accusantium, tempore
-          magni voluptate quia animi! Placeat perferendis ut itaque blanditiis
-          natus ex ea.`,
-    liveUrl: "",
-    githubUrl: "",
-    stack: [
-      { name: "NextJS" },
-      { name: "Material UI" },
-      { name: "NodeJS" },
-      { name: "MySQL" },
+      { name: "Express.js" },
+      { name: "MongoDB" },
     ],
   },
 ];
@@ -115,18 +106,18 @@ const WorkPage: React.FC = () => {
                       </Typography>
                       <Typography
                         sx={{
-                          fontSize: "2rem",
+                          fontSize: "1.5rem",
                           textTransform: "capitalize",
                           fontWeight: 600,
                           lineHeight: 1,
                         }}
                       >
-                        {item.category}
+                        {`${item.title} - ${item.category}`}
                       </Typography>
-                      <Typography sx={{}}>
-                        {item.description.length > 300
-                          ? item.description.substring(0, 300) + `...`
-                          : item.description}
+                      <Typography
+                        sx={{ color: "999999", fontSize: "0.9rem", mt: 1 }}
+                      >
+                        {item.description}
                       </Typography>
                       <Stack
                         flexDirection="row"
@@ -205,7 +196,7 @@ const WorkPage: React.FC = () => {
                     </Stack>
                   </Grid>
                   <Grid size={{ xs: 12, md: 6 }}>
-                    <Box>
+                    <Box sx={{ maxHeight: "500px", overflow: "hidden" }}>
                       <CardMedia
                         component={"img"}
                         image={item.image}

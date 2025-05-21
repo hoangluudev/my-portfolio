@@ -1,23 +1,23 @@
 import React from "react";
-import { Stack } from "@mui/material";
+import { Link, Stack } from "@mui/material";
 import { FaTelegram, FaGithub, FaLinkedin } from "react-icons/fa";
-import MuiLink from "./MuiLink";
+import { config } from "@/config/environment/env";
 
 const socialIcons = [
   {
     icon: <FaGithub />,
     name: "Github",
-    path: "#",
+    path: config.personalGithubUrl,
   },
   {
     icon: <FaTelegram />,
     name: "Telegram",
-    path: "#",
+    path: config.personalTelegramUrl,
   },
   {
     icon: <FaLinkedin />,
     name: "LinkedIn",
-    path: "#",
+    path: config.personalLinkedinUrl,
   },
 ];
 const Social: React.FC = () => {
@@ -31,7 +31,7 @@ const Social: React.FC = () => {
     >
       {socialIcons.map((item, index) => {
         return (
-          <MuiLink
+          <Link
             key={index}
             href={item.path}
             sx={{
@@ -49,9 +49,11 @@ const Social: React.FC = () => {
                 color: "#000",
               },
             }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {item.icon}
-          </MuiLink>
+          </Link>
         );
       })}
     </Stack>

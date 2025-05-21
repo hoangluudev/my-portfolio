@@ -4,34 +4,47 @@ import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import ScrollArea from "../ui/ScrollArea";
 
-interface ExperienceItemsProps {
-  name: string;
-  position: string;
-  duration: string;
+interface ExperienceInfoProps {
+  title: string;
+  description: string;
+  items: {
+    name: string;
+    position: string;
+    duration: string;
+  }[];
 }
-interface ExperienceProps {
-  data: {
-    icon: string;
-    title: string;
-    description: string;
-    items: ExperienceItemsProps[];
-  };
-}
+const experienceInfo: ExperienceInfoProps = {
+  title: "My experience",
+  description: `I gained practical experience in both fullstack development and system administration through internships,
+   working with modern web technologies and Linux-based infrastructure.`,
+  items: [
+    {
+      name: "MaskCodex",
+      position: "Front-End Developer Intern",
+      duration: "05/2020 - 07/2022",
+    },
+    {
+      name: "Bach Kim Network Solutions",
+      position: "System Adminstrator Intern",
+      duration: "04/2025 - 05/2025",
+    },
+  ],
+};
 
-const Experience: React.FC<ExperienceProps> = ({ data }) => {
+const Experience: React.FC = () => {
   return (
     <Box width={"100%"}>
       <Typography
         sx={{ textAlign: "center", fontSize: "2rem", fontWeight: 700 }}
       >
-        {data.title}
+        {experienceInfo.title}
       </Typography>
       <Typography sx={{ textAlign: "center", my: 4 }}>
-        {data.description}
+        {experienceInfo.description}
       </Typography>
       <ScrollArea height={"380px"} thumbColor="#02FC99">
         <Grid container spacing={3} sx={{ width: "100%" }}>
-          {data.items.map((item, index) => {
+          {experienceInfo.items.map((item, index) => {
             return (
               <Grid
                 key={index}

@@ -3,33 +3,69 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import ScrollArea from "../ui/ScrollArea";
+import { config } from "@/config/environment/env";
 
-interface AboutItemsProps {
-  fieldName: string;
-  fieldValue: string;
-}
 interface AboutProps {
-  data: {
-    title: string;
-    description: string;
-    items: AboutItemsProps[];
-  };
+  title: string;
+  description: string;
+  items: { fieldName: string; fieldValue: string }[];
 }
 
-const About: React.FC<AboutProps> = ({ data }) => {
+const aboutInfo: AboutProps = {
+  title: "About me",
+  description: `I'm a passionate web developer focused on building responsive and user-friendly applications
+   using modern JavaScript technologies. With over a year of hands-on learning and project experience,
+    I'm continuously improving through real practice and self-study.`,
+  items: [
+    {
+      fieldName: "Name",
+      fieldValue: "Luu Nguyen",
+    },
+    {
+      fieldName: "Phone",
+      fieldValue: config.personalPhoneNumber,
+    },
+    {
+      fieldName: "Experience",
+      fieldValue: "1+ Years",
+    },
+    {
+      fieldName: "Telegram",
+      fieldValue: config.personalTelegramUrl,
+    },
+    {
+      fieldName: "Nationality",
+      fieldValue: "Vietnamese",
+    },
+    {
+      fieldName: "Email",
+      fieldValue: config.personalEmail,
+    },
+    {
+      fieldName: "Freelance",
+      fieldValue: "Available",
+    },
+    {
+      fieldName: "Languages",
+      fieldValue: "English (Basic), Vietnamese (Native)",
+    },
+  ],
+};
+
+const About: React.FC = () => {
   return (
     <Box width={"100%"}>
       <Typography
         sx={{ textAlign: "center", fontSize: "2rem", fontWeight: 700 }}
       >
-        {data.title}
+        {aboutInfo.title}
       </Typography>
       <Typography sx={{ textAlign: "center", my: 4 }}>
-        {data.description}
+        {aboutInfo.description}
       </Typography>
       <ScrollArea height={"380px"} thumbColor="#02FC99">
         <Grid container spacing={3} sx={{ width: "100%" }}>
-          {data.items.map((item, index) => {
+          {aboutInfo.items.map((item, index) => {
             return (
               <Grid
                 key={index}
